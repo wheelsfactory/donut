@@ -1,6 +1,6 @@
-package com.im7studio.birds.dao;
+package com.wheelsfactory.donut.dao;
 
-import com.im7studio.birds.domain.User;
+import com.wheelsfactory.donut.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, String> {

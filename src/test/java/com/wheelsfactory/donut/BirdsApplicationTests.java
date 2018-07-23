@@ -1,4 +1,4 @@
-package com.im7studio.birds;
+package com.wheelsfactory.donut;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

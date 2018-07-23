@@ -1,12 +1,12 @@
-package com.im7studio.birds;
+package com.wheelsfactory.donut;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BirdsApplication {
+public class DonutApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BirdsApplication.class, args);
+        SpringApplication.run(DonutApplication.class, args);
     }
 }

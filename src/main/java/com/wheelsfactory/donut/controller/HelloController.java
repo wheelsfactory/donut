@@ -1,7 +1,7 @@
-package com.im7studio.birds.controller;
+package com.wheelsfactory.donut.controller;
 
-import com.im7studio.birds.dao.UserRepository;
-import com.im7studio.birds.domain.User;
+import com.wheelsfactory.donut.dao.UserRepository;
+import com.wheelsfactory.donut.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

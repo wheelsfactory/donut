@@ -1,4 +1,4 @@
-package com.im7studio.birds.domain;
+package com.wheelsfactory.donut.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
