@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_user")
@@ -11,15 +12,19 @@ public class User {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name = "id")
     private String id;
-    @Column(name = "name")
-    private String name;
-    @Column(name = "gender")
-    private String gender;
-    @Column(name = "age")
-    private int age;
 
+    private String name;
+
+    private String account;
+
+    private String avatarPath;
+
+    private String mobile;
+
+    private String email;
+
+    private List<Baby> baby;
 
     public String getId() {
         return id;
@@ -37,19 +42,43 @@ public class User {
         this.name = name;
     }
 
-    public String getGender() {
-        return gender;
+    public String getAccount() {
+        return account;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setAccount(String account) {
+        this.account = account;
     }
 
-    public int getAge() {
-        return age;
+    public String getAvatarPath() {
+        return avatarPath;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setAvatarPath(String avatarPath) {
+        this.avatarPath = avatarPath;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public List<Baby> getBaby() {
+        return baby;
+    }
+
+    public void setBaby(List<Baby> baby) {
+        this.baby = baby;
     }
 }
