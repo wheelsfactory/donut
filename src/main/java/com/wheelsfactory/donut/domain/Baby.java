@@ -1,8 +1,17 @@
 package com.wheelsfactory.donut.domain;
 
-import javax.persistence.Id;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "tb_baby")
+@NoArgsConstructor
+@ToString
+@EqualsAndHashCode
 public class Baby {
 
     @Id
@@ -10,8 +19,7 @@ public class Baby {
 
     private String name;
 
-    private List<User> user;
-
+    @ManyToOne(optional = false)
     private User primaryUser;
 
     private String age;
@@ -36,14 +44,6 @@ public class Baby {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<User> getUser() {
-        return user;
-    }
-
-    public void setUser(List<User> user) {
-        this.user = user;
     }
 
     public User getPrimaryUser() {

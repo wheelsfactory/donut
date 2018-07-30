@@ -1,84 +1,61 @@
 package com.wheelsfactory.donut.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.*;
+
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "tb_user")
+@NoArgsConstructor
+@ToString
+@EqualsAndHashCode
 public class User {
     private static final long serialVersionUID = 1L;
 
     @Id
-    private String id;
+    @GeneratedValue
+    @Getter
+    @Setter
+    private long id;
 
-    private String name;
+    @Getter
+    @Setter
+    private String nickname;
 
-    private String account;
+    @Getter
+    @Setter
+    private String password;
 
+    @Getter
+    @Setter
+    private String username;
+
+    @Getter
+    @Setter
     private String avatarPath;
 
+    @Getter
+    @Setter
     private String mobile;
 
+    @Getter
+    @Setter
     private String email;
 
+    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
+    @JoinTable(name = "tb_user_baby",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "baby_id", referencedColumnName = "id"))
+    @Getter
+    @Setter
     private List<Baby> baby;
 
-    public String getId() {
-        return id;
-    }
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = "tb_user_authority", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "authority_id", referencedColumnName = "id"))
+    @Getter
+    @Setter
+    private List<Authority> authorities;
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAccount() {
-        return account;
-    }
-
-    public void setAccount(String account) {
-        this.account = account;
-    }
-
-    public String getAvatarPath() {
-        return avatarPath;
-    }
-
-    public void setAvatarPath(String avatarPath) {
-        this.avatarPath = avatarPath;
-    }
-
-    public String getMobile() {
-        return mobile;
-    }
-
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public List<Baby> getBaby() {
-        return baby;
-    }
-
-    public void setBaby(List<Baby> baby) {
-        this.baby = baby;
-    }
 }
