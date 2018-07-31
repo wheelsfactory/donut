@@ -15,12 +15,23 @@ import lombok.*;
 public class Authority {
     @Id
     @GeneratedValue
-    @Getter
-    @Setter
     private long id;
 
-    @Getter
-    @Setter
     private String role;
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 }
