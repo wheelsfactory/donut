@@ -3,6 +3,7 @@ package com.wheelsfactory.donut.domain;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -28,11 +29,11 @@ public class User {
 
     private String email;
 
-    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "tb_user_baby",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "baby_id", referencedColumnName = "id"))
-    private List<Baby> baby;
+    private List<Baby> baby = new ArrayList<>();
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "tb_user_authority", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),

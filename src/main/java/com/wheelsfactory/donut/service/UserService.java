@@ -1,6 +1,7 @@
 package com.wheelsfactory.donut.service;
 
 import com.wheelsfactory.donut.domain.Authority;
+import com.wheelsfactory.donut.domain.Baby;
 import com.wheelsfactory.donut.domain.User;
 import com.wheelsfactory.donut.repository.AuthorityRepository;
 import com.wheelsfactory.donut.repository.UserRepository;
@@ -44,5 +45,10 @@ public class UserService implements UserDetailsService {
         }
 
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),authorities);
+    }
+
+    public List<Baby> findBabiesByUsername(String username){
+        User user = userRepository.findByUsername(username);
+        return user.getBaby();
     }
 }

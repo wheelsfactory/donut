@@ -15,26 +15,24 @@ import java.util.List;
 public class Baby {
 
     @Id
-    private String id;
+    @GeneratedValue
+    private Integer id;
 
     private String name;
 
-    @ManyToOne(optional = false)
-    private User primaryUser;
+    private Float age;
 
-    private String age;
-
-    private String gender;
+    private Integer gender;
 
     private String avatarPath;
 
-    private String status;
+    private Integer status;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -46,27 +44,19 @@ public class Baby {
         this.name = name;
     }
 
-    public User getPrimaryUser() {
-        return primaryUser;
-    }
-
-    public void setPrimaryUser(User primaryUser) {
-        this.primaryUser = primaryUser;
-    }
-
-    public String getAge() {
+    public Float getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(Float age) {
         this.age = age;
     }
 
-    public String getGender() {
+    public Integer getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Integer gender) {
         this.gender = gender;
     }
 
@@ -78,11 +68,11 @@ public class Baby {
         this.avatarPath = avatarPath;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 }
